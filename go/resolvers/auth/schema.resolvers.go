@@ -13,12 +13,12 @@ import (
 
 // Login is the resolver for the login field.
 func (r *mutationResolver) Login(ctx context.Context, input authmodel.LoginRequest) (*authmodel.LoginResponse, error) {
-	return r.Login(ctx, input)
+	return r.handler.Login(ctx, input)
 }
 
 // Logout is the resolver for the logout field.
 func (r *mutationResolver) Logout(ctx context.Context, input authmodel.LogoutRequest) (*authmodel.LogoutResponse, error) {
-	return r.Logout(ctx, input)
+	return r.handler.Logout(ctx, input)
 }
 
 // Mutation returns authgen.MutationResolver implementation.

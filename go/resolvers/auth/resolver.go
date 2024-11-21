@@ -7,3 +7,7 @@ package authresolver
 type Resolver struct {
 	handler Handler
 }
+
+func NewResolver(handler Handler) *Resolver {
+	return &Resolver{handler: handler}
+}
