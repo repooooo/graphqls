@@ -1,4 +1,4 @@
-package auth
+package authresolver
 
 import (
 	"context"
@@ -6,6 +6,6 @@ import (
 )
 
 type Handler interface {
-	Login(ctx context.Context, input model.LoginRequest) (*model.LoginResponse, error)
-	Logout(ctx context.Context, input model.LogoutRequest) (*model.LogoutResponse, error)
+	Login(ctx context.Context, input authmodel.LoginRequest) (*authmodel.LoginResponse, error)
+	Logout(ctx context.Context, input authmodel.LogoutRequest) (*authmodel.LogoutResponse, error)
 }

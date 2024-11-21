@@ -1,4 +1,4 @@
-package auth
+package authresolver
 
 // This file will be automatically regenerated based on the schema, any resolver implementations
 // will be copied through when generating and any unknown code will be moved to the end.
@@ -7,21 +7,21 @@ package auth
 import (
 	"context"
 
-	"github.com/repooooo/graphqls/go/gen/auth"
-	"github.com/repooooo/graphqls/go/gen/auth/model"
+	authgen "github.com/repooooo/graphqls/go/gen/auth"
+	authmodel "github.com/repooooo/graphqls/go/gen/auth/model"
 )
 
 // Login is the resolver for the login field.
-func (r *mutationResolver) Login(ctx context.Context, input model.LoginRequest) (*model.LoginResponse, error) {
+func (r *mutationResolver) Login(ctx context.Context, input authmodel.LoginRequest) (*authmodel.LoginResponse, error) {
 	return r.Login(ctx, input)
 }
 
 // Logout is the resolver for the logout field.
-func (r *mutationResolver) Logout(ctx context.Context, input model.LogoutRequest) (*model.LogoutResponse, error) {
+func (r *mutationResolver) Logout(ctx context.Context, input authmodel.LogoutRequest) (*authmodel.LogoutResponse, error) {
 	return r.Logout(ctx, input)
 }
 
-// Mutation returns auth.MutationResolver implementation.
-func (r *Resolver) Mutation() auth.MutationResolver { return &mutationResolver{r} }
+// Mutation returns authgen.MutationResolver implementation.
+func (r *Resolver) Mutation() authgen.MutationResolver { return &mutationResolver{r} }
 
 type mutationResolver struct{ *Resolver }

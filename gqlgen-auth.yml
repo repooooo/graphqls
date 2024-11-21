@@ -5,7 +5,7 @@ schema:
 # Where should the generated server code go?
 exec:
   filename: ./go/gen/auth/generated.go
-  package: auth
+  package: authgen
 
 # Uncomment to enable federation
 # federation:
@@ -18,13 +18,13 @@ exec:
 # Where should any generated models go?
 model:
   filename: ./go/gen/auth/model/models_gen.go
-  package: model
+  package: authmodel
 
 # Where should the resolver implementations go?
 resolver:
   layout: follow-schema
   dir: ./go/resolvers/auth
-  package: auth
+  package: authresolver
   filename_template: "{name}.resolvers.go"
   # Optional: turn on to not generate template comments above resolvers
   # omit_template_comment: false
