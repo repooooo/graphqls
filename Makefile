@@ -10,8 +10,13 @@ last-tag:
 
 new-tag:
 	@read -p "Enter new tag: " tag; \
-	git tag "$$tag"; \
-	git push origin "$$tag"; \
-	echo "Tag '$$tag' has been successfully added and pushed."
+	read -p "Are you sure you want to create and push the tag '$$tag'? (y/n): " confirm; \
+	if [ "$$confirm" = "y" ] || [ "$$confirm" = "Y" ]; then \
+		git tag "$$tag"; \
+		git push origin "$$tag"; \
+		echo "Tag '$$tag' has been successfully added and pushed."; \
+	else \
+		echo "Tag creation aborted."; \
+	fi
 
 tag: last-tag new-tag
